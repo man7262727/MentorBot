@@ -52,12 +52,12 @@ async function sendMessage() {
     if (!message) return;
 
     const welcomeScreen = document.getElementById("welcome-screen");
-if (welcomeScreen) {
-    welcomeScreen.classList.add("fade-out");
-    setTimeout(()=>welcomeScreen.remove(),400);
-}
+    if (welcomeScreen) {
+        welcomeScreen.classList.add("fade-out");
+        setTimeout(() => welcomeScreen.remove(), 400);
+    }
 
-hideFAQs();
+    hideFAQs();
 
 
     console.log("📤 Sending:", message);
@@ -65,10 +65,10 @@ hideFAQs();
     // add user message
     addMessage(message, "user");
     const welcome = document.getElementById("welcome-screen");
-if (welcome) {
-    welcome.classList.add("fade-out");
-    setTimeout(() => welcome.remove(), 400);
-}
+    if (welcome) {
+        welcome.classList.add("fade-out");
+        setTimeout(() => welcome.remove(), 400);
+    }
 
     userInput.value = "";
 
@@ -80,7 +80,7 @@ if (welcome) {
     chatBox.scrollTop = chatBox.scrollHeight;
 
     try {
-        const response = await fetch("http://localhost:5000/api/chat", {
+        const response = await fetch("https://mentorbot-lh38.onrender.com/api/chat", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ question: message })
@@ -142,8 +142,8 @@ function giveFeedback(type, message, parentDiv) {
     localStorage.setItem("feedback", JSON.stringify(stored));
 
     // Mark selected button
-    parentDiv.innerHTML = type === "like" 
-        ? `👍 Liked` 
+    parentDiv.innerHTML = type === "like"
+        ? `👍 Liked`
         : `👎 Disliked`;
 
     parentDiv.style.opacity = "0.7";
@@ -175,7 +175,7 @@ function loadChatHistory() {
         }
     });
 
-    
+
 }
 
 
