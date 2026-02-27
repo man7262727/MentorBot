@@ -11,6 +11,10 @@ app.use(cors());
 app.use(express.json());
 
 // Routes
+app.get("/", (req, res) => {
+  res.send("MentorBot API is running successfully!");
+});
+
 app.use("/api/chat", chatRoutes);
 
 app.listen(process.env.PORT, () => {
