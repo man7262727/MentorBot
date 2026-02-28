@@ -80,7 +80,7 @@ async function sendMessage() {
     chatBox.scrollTop = chatBox.scrollHeight;
 
     try {
-        const response = await fetch("https://mentorbot-lh38.onrender.com/api/chat", {
+        const response = await fetch("https://mentorbot-1.onrender.com/api/chat", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ question: message })
