@@ -9,7 +9,7 @@ const app = express();
 
 // Allowed origins — add any frontend URLs here
 const allowedOrigins = [
-  "https://mentorbot-9cvj.onrender.com",
+  "https://mentorbot-5f27.onrender.com",
   "http://localhost:5500",
   "http://127.0.0.1:5500",
 ];
