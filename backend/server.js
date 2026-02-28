@@ -9,7 +9,6 @@ const app = express();
 
 // Allow all origins (safe for a public chatbot API)
 app.use(cors());
-app.options("*", cors());
 
 app.use(express.json());
 
